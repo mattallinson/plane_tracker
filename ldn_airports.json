@@ -188,5 +188,14 @@
         "country_code": "GB",
         "popularity": 39558,
         "distance": 49.762
+    },
+    
+    {
+        "name": "Farnborough Airport",
+        "iata_code": "FAB",
+        "icao_code": "EGLF",
+        "lat": 51.276794,
+        "lng": -0.774423,
+        "country_code": "GB"
     }
 ]
