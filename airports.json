@@ -1929,7 +1929,7 @@
     },
     {
         "name": "EuroAirport Basel-Mulhouse-Freiburg",
-        "iata_code": "MLH",
+        "iata_code": "BSL",
         "icao_code": "LFSB",
         "lat": 47.592968,
         "lng": 7.530647,
