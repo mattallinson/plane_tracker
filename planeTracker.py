@@ -1,7 +1,6 @@
 import requests
 import json
 import pandas as pd
-import os
 
 #INITIALISE
 with open('keyfile') as keyfile:
@@ -69,7 +68,7 @@ def get_planes(api_key=API_KEY, bbox=LONDON_BOX):
     # make DataFrame of all planes
     df=pd.DataFrame(flying_planes)
 
-    # Usesthe IATA codes to generate names for Source & Destination Airports
+    # Uses the IATA codes to generate names for Source & Destination Airports
     df['Source'] = df['dep_iata'].map(find_airport_name, 
                                   na_action='ignore')
     df['Destination'] = df['arr_iata'].map(find_airport_name, 
@@ -93,5 +92,6 @@ def get_planes(api_key=API_KEY, bbox=LONDON_BOX):
         'flyovers' : df.query(
             "Source not in @local_names and Destination not in @local_names").dropna(),
         'mystery' : df.query("Destination.isna()"),
-        'naughty' : df.query("Source in @local_names and Destination in @local_names").dropna()
+        'naughty' : df.query("Source in @local_names and Destination in @local_names").dropna(),
+        'all' : df
     }
